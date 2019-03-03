@@ -1,2 +1,2 @@
-# gsu_alphago_lecture
-Slides for Deep Learning Lecture at GSU
+# alphago_sunum
+"Ve İnsan Bilgisayarı Yine Yendi" Seminer Sunumu
