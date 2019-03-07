@@ -1,540 +1,584 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
 
-		<title>AlphaGo vs. Humanity</title>
+	<title>AlphaGo and AI</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<style>
+		.horitem {
+			display: inline-block;
+			height: 100%;
+			margin: 5px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-        <style>
-        .horitem {
-          display: inline-block;
-          height: 100%;
-          margin: 5px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: 50% 50%;
-        }
-        .horitem * {
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: 50% 50%;
-        }
-        </style>
+		.horitem * {
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+	</style>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
-		<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+	<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h2>AI and Deep Learning via AlphaGo</h2>
+				<h3>A Lecture at GSU for ...</h3>
+				<p>
+					<small>Yrd.Doç.Dr. İzzet PEMBECİ - 07.03.2018</small><br />
+					<small><a href="https://github.com/pembeci/gsu_alphago_lecture">https://github.com/pembeci/gsu_alphago_lecture</a></small>
+				</p>
+				<img src="img/go_poster_footer.png" />
+			</section>
+
+			<section>
 				<section>
-					<h2>Ve Bilgisayar İnsanı Yine Yendi!</h2>
-					<h3>Bilgisayar ve Bilişim Topluluğu</h3>
-					<p>
-						<small>Yrd.Doç.Dr. İzzet PEMBECİ - 08.04.2016</small><br/>
-                        <small>http://github.com/pembeci/alphago_sunum</small>
-					</p>
-                    <img src="img/go_poster_footer.png" />
-				</section>
-
-				<section>
-					<h3>Konuşma Planı</h3>
-                    <ul>
-                       <li><b>Neden buradayız?</b></li>
-                       <li>Nereden geldik? (Go, YZ Tarihçesi, Oyunlar ve YZ)</li>
-                       <li>Ne oldu şimdi? (AlphaGo, Deep Learning)</li>
-                       <li>Nereye gidiyoruz? (SKYNET!!!!)</li>                       
-                    </ul>
-				</section>
-
-				<section>
-                  <section>
-					<h3>Neden buradayız?</h3>
-                    <div class="stretch">
-                     <div class="horitem fragment" style="width:45%">
-                      <a href="http://bilmuh.mu.edu.tr/tr/etkinlik/bilgisayarlar-neden-go-oynayamayi-beceremezler-21-mart-cuma-3616"><div class="fragment" style="height:55%; background-image: url(img/seminer1.png);"></div></a>
-                      <div class="fragment" style="height: 45%; background-image: url(img/Fan-Hui-vs-AlphaGo.jpg);"></div>
-                     </div>  
-                     <div class="horitem fragment"  style="width:45%">
-                      <div class="fragment" style="height: 55%; background-image: url(img/nature-cover.jpg);"></div>
-                      <div class="fragment" style="height: 45%; background-image: url(img/sedol_match.jpg);"></div>
-                     </div>  
-                    </div> 
-                   </section> 
-                   <section>
-                    <div class="stretch">
-                      <div class="horitem" style="height: 100%; width:100%; background-image: url(img/betting.jpg);"></div>                        
-                    </div></section>  
-<!---                    
-                   <section>                     
-                       <script height="370px" width="658px" src="http://player.ooyala.com/iframe.js#ec=o1a2hzMDE6Fo5WSJ6vgihvknOJf9gZSm&pbid=dcc84e41db014454b08662a766057e2b"></script>
-                   </section>
---->                   
-                   <section  data-background="img/korea1.jpg"></section>
-                   <section  data-background="img/korea2.jpg"></section>
-                   <section  data-background="img/watching6.jpg"></section>
-                   <section  data-background="img/watching1.jpg"></section>
-                   <section  data-background="img/watching5.jpg"></section>
-                   <section  data-background="img/watching2.jpg"></section>
-                   <section  data-background="img/watching3.jpg"></section>
-                   <section>
-                     <iframe width="560" height="315" src="https://www.youtube.com/embed/C2txn4igy-M?start=0&end=65" frameborder="0" allowfullscreen></iframe>
-                   </section>
-                   <section>
-                    <h4>DeepMind -- 2010 Kuruluş, 2014 Google ($650 Milyon)</h4> 
-                    <div class="stretch">
-                      <div class="horitem fragment" style="height: 100%; width:100%; background-image: url(img/koray.jpg);"></div>  
-                    </div>  
-                   </section>
-                   <section>
-                    <h4>DeepMind -- 2010 Kuruluş, 2014 Google ($650 Milyon)</h4> 
-                    <div class="stretch">                     
-                     <div class="horitem fragment" style="height: 66%; width:32%;  background-position: 50% 100%; background-image: url(img/founder1.jpg)">
-                       <div style="text-align:center;"><small>Demis Hassabis<br>Kıbrıs Rum & Singapur</small></div>
-                     </div>
-                     <div class="horitem fragment" style="height: 66%; width:32%;  background-position: 50% 100%; background-image: url(img/founder2.png)">
-                       <div style="text-align:center;"><small>Shane Legg<br>Yeni Zellanda</small></div>
-                     </div>
-                     <div class="horitem fragment" style="height: 66%; width:32%;  background-position: 50% 100%; background-image: url(img/founder3.jpg)">
-                       <div style="text-align:center;"><small><a href="https://en.wikipedia.org/wiki/Mustafa_Suleyman">Mustafa Suleyman</a><br>???</small></div>
-                     </div>
-                    </div> 
-                   </section>    
-                   <section  data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
-                    <div class="stretch">
-                      <div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline1.jpg);"></div>                        
-                    </div></section>                      
-                   <section  data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
-                    <div class="stretch">
-                      <div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline2.jpg);"></div>                        
-                    </div></section>                      
-                   <section  data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
-                    <div class="stretch">
-                      <div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline3.jpg);"></div>                        
-                    </div></section>                      
-                   <section  data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
-                    <div class="stretch">
-                      <div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline4.jpg);"></div>                        
-                    </div></section>                      
-                   <section  data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
-                    <div class="stretch">
-                      <div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline5.jpg);"></div>                        
-                    </div></section>                      
-                   </section>
+					<h3>Talk Plan</h3>
+					<ul>
+						<li><b>AI, Machine Learning, Data Science</b></li>
+						<li>Why AlphaGo?</li>
+						<li>Game of Go, How Computers Play Games</li>
+						<li>AlphaGo
+							<ul>
+								<li>Monte Carlo Tree Search</li>
+								<li>Reinforcement Learning</li>
+								<li>Deep Learning</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 				<section>
-					<h3>Konuşma Planı</h3>
-                    <ul>
-                       <li>Neden buradayız?</li>
-                       <li>Nereden geldik? (<b>Go</b>, YZ Tarihçesi, Oyunlar ve YZ)</li>
-                       <li>Ne oldu şimdi? (AlphaGo, Deep Learning)</li>
-                       <li>Nereye gidiyoruz? (SKYNET!!!!)</li>                       
-                    </ul>
+					<h3>Relation of AI, ML, DL</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/ai_venn2.png)"></div>
+					</div>
 				</section>
 				<section>
-                    <h3><img src="img/playing1.png"  height=180/><span style="padding: 0px 16px">Go Oyunu</span>
-                           <img height=180 src="img/playing2.png" /></h3>
-                    <!-- <img style="position:absolute; top:-100px; left:-230px;" src="img/playing1.png" />
-                    <img style="position:absolute; top:-100px; right:-230px;" src="img/playing2.png" /> -->
-                    <ul>
-                      <li class="fragment">Çin (MÖ 4.yy, savaş, sanat), Kore (5-7. yy), Japonya (7. yy, <a href="http://en.wikipedia.org/wiki/Four_go_houses">okullar</a>), Batı (1900'ler)</li>
-                      <li class="fragment">Türkiye (90'lar, <a href="http://www.go.metu.edu.tr/alparkilinc.html">Alpar Kılınç</a>, <a href="https://eksisozluk.com/sibumi--153274">Şibumi</a>/<a href="https://eksisozluk.com/trevanian--33822">Trevanian</a>, <a href="http://www.tgod.org.tr/gohane">Türkiye Go Oyuncuları Derneği</a>)</li>
-                      <li class="fragment">Felsefi Boyutları</li>
-                      <li class="fragment">Basit Kurallar</li>
-                      <li class="fragment">Farklı güçte oyuncular (30k &rarr; 1k &rarr; 1d &rarr; 9d &rarr; 1p &rarr; 9p)</li>
-                      <li class="fragment">Nasıl öğrenirim: <a href="http://senseis.xmp.net/">Web</a>, <a href="http://www.goproblems.com/">Problemler</a>, Kitaplar, <a href="http://en.wikipedia.org/wiki/Internet_Go_server">Go Sunucuları</a> (IGS, KGS, <a href="http://en.wikipedia.org/wiki/Go_software#User_Interfaces">Clients</a>)</li>
-                    </ul>
-				</section>
-                 <section>
-                    <h3>Go Temel Kurallar</h3>
-                    <div  style="float: left; width:45%;"><img src="img/Go-board-animated.gif"/></div>
-                     <ul   style="width:45%; font-size:80%;">
-                       <li>Satrançvari mekanik: İki kişi, siyah beyaz <em>eşdeğer</em> taşlar, <em>noktalara</em> hamle</li>
-                       <li>Kural1 (liberty): Her taş (taş grubu) komşu boş noktalardan nefes almalı, nefes alamayanlar ölür.</li>
-                       <li>Kural2 (ko): Oyun (tahta) daha önceki bir konuma dönemez.</li>
-                       <li>Diğer kavramlar bunlardan türüyor</li>
-                       <li>Puanlama: Çevrilen alan + hapsedilen taşlar</li>
-                     </ul>                                        
-                </section>
-                <section>
-                    <h3>Go Bilgeliği - Strateji</h3>
-                        <div class="fragment zoom-in">
-                            <div>U.S. Army’s Strategic Studies Institute -  <a href="http://www.worldcat.org/title/learning-from-the-stones-a-go-approach-to-mastering-chinas-strategic-concept-shi/oclc/55599909">Learning from the Stones: A Go Approach to Mastering China’s Strategic Concept of Shi</a>:
-                              <blockquote>In this monograph, the author uses the ancient game of Go as a metaphor for the Chinese approach to strategy. He shows that this is very different than the linear method that underlies American strategy. By better understanding Go, he argues, American strategies could better understand Chinese strategy. </blockquote>
-                            </div>
-                       </div>
-                </section>
-                <section>
-                    <h3>Go Bilgeliği - <a href="#">Özdeyişler</a></h3>
-                    <ul  style="font-size:90%;">
-                      <li class="fragment">Give your opponent what he wants.</li>
-                      <li class="fragment">He who rides on a tiger can never get off.</li>
-                      <li class="fragment">A rich man should not pick quarrels.</li>
-                      <li class="fragment">Greed for the win takes the win away.</li>
-                      <li class="fragment">Don't try to win. Try not to lose.</li>
-                      <li class="fragment">You can play Go but don't let Go play you.</li>
-                      <li class="fragment">Never wrestle with a pig.</li>
-                      <li class="fragment">Make a fist before striking.</li>
-                      <li class="fragment">Play urgent moves before big moves.</li>
-                      <li class="fragment">Make a feint to the East while attacking in the West.</li>
-                      <li class="fragment">Play fast, die fast. Play slow, die slow.</li>
-                    </ul>                                        
+					<h3>Relation of AI, ML, DL</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/ai_fields.jpg)"></div>
+					</div>
 				</section>
 				<section>
-					<h3>Konuşma Planı</h3>
-                    <ul>
-                       <li>Neden buradayız?</li>
-                       <li>Nereden geldik? (Go, <b>YZ Tarihçesi, Oyunlar ve YZ</b>)</li>
-                       <li>Ne oldu şimdi? (AlphaGo, Deep Learning)</li>
-                       <li>Nereye gidiyoruz? (SKYNET!!!!)</li>                       
-                    </ul>
-				</section>                
-                <section>
-                  <section>
-                   <h3>Yapay Zeka (YZ, AI)</h3>                   
-                   <ul  style="font-size:100%;">
-                      <li class="fragment">Köklü bir dal</li>
-                      <li class="fragment">Disiplinler arası</li>
-                      <li class="fragment">Strong AI, Weak AI</li>
-                      <li class="fragment">Hala yolunu buluyor</li>                      
-                  </section>
-                  <section  data-background="img/ai_fields.jpg"></section>
-                  <section><div class="stretch">                     
-                     <div class="horitem" style="height:100%; width:100%; 
-                                                 background-image: url(img/ai_domains.png)"></div>                     
-                  </div></section>
-                  <section><div class="stretch">                     
-                     <div class="horitem" style="height:100%; width:100%; 
-                                                 background-image: url(img/ai_domains.jpg)"></div>                     
-                  </div></section>
-                  <section><div class="stretch">                     
-                     <div class="horitem" style="height:100%; width:100%; 
-                                                 background-image: url(img/ai_companies.jpg)"></div>                     
-                  </div></section>
-                  <section>
-                   <h3>Yapay Zeka Tarihçe</h3>                    
-                   <ul  style="font-size:90%;">
-                      <li class="fragment">1950 - Turing Test</li> 
-                      <li class="fragment">1950 - Claude Shannon:Satranç'ın Arama Problemi olarak analizi</li> 
-                      <li class="fragment">1951 - Dama ve Satranç oynayan programlar</li> 
-                      <li class="fragment">1956 -  Dartmouth College summer AI conference</li> 
-                      <li class="fragment">1959 - MIT AI Lab</li> 
-                      <li class="fragment">1961 - Symbolic Computing, Calculus Problemleri</li> 
-                      <li class="fragment">1965 - ELIZA, İlk chat bot</li> 
-                      <li class="fragment">1966 - Makine çevirisi işe yaramıyor. Doğal Dil İşleme (NLP) uykuya.</li> 
-                      <li class="fragment">1969 - Minsky & Pappert, Perceptrons, Yapay Sinir Ağları uykuya</li> 
-                      <li class="fragment">1970ler - YZ'nin Uzun Kışı</li> 
-                   </ul></section>
-                  <section>
-                   <h3>Yapay Zeka Tarihçe</h3>                    
-                   <ul  style="font-size:85%;">                    
-                      <li class="fragment">1980ler - Uzman sistemler, Ticarileşme</li> 
-                      <li class="fragment">1986 - Yapay Sinir Ağları ayaklanır. Backpropogation (1974)</li> 
-                      <li class="fragment">1991 - Dart, 1991 Körfez Savaşı</li> 
-                      <li class="fragment">1994 - Chinook, İngiliz Daması Şampiyonu</li> 
-                      <li class="fragment">1995 - No Hands Across America, 4500km, Gaz-Fren hariç</li> 
-                      <li class="fragment">1997 - Deep Blue Kasparov'u yener.</li> 
-                      <li class="fragment">1997 - Othello Dünya Şampiyonu</li> 
-                      <li class="fragment">1998 - Furby, robotlar evlerde</li> 
-                      <li class="fragment">1998 - TD-Gammon, Tavla Dünya Şampiyonu</li> 
-                      <li class="fragment">2005 - Honda, ASIMO robot</li> 
-                      <li class="fragment">2009 - Google, Kendi kendine giden araba</li> 
-                      <li class="fragment">2011 - IBM Watson, Jeopardy Dünya Şampiyonu</li> 
-                      <li class="fragment">2013 - HRP2 (Japonya/Google), drive a vehicle, walk over debris, climb a ladder, remove debris, walk through doors, cut through a wall, close valves and connect a hose</li> 
-                      <li class="fragment">2016 - AlphaGo</li> 
-                  </section>
-                </section>
-               <section>
-                <section>
-                    <h3>Bilgisayarlara Oyun Oynatma</h3>
-                    <ul>
-                      <li class="fragment">YZ için test alanı, Zor, Eğlenceli</li>
-                      <li class="fragment">İyi tanımlı, <em>az sayıda</em> kural, çok ihtimal (arama uzayı)</li>
-                      <li class="fragment">Belirsizlikler (rakip, şans), zaman kısıtı, eksik bilgi</li>
-                      <li class="fragment">Halloldu: Dama (Chinook, Dünya Şampiyonu 1994), Satranç (Deep Blue-Kasparov 1997, Deep Fritz-Kramnik 2006), Othello (Logistello, DŞ 1997), Scrabble (Maven, DŞ 1998), Tavla (TD-Gammon, 1998 neredeyse DŞ)</li>
-                      <li class="fragment">Yeni hedefler: Briç, Poker, Go, Kutu Oyunları (Settlers of Catan), MMORPG, General Game Playing</li>
-                    </ul>                                        
+					<h3>Relation of AI, ML, DL</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/ai_domains.png)"></div>
+					</div>
 				</section>
-                <section>
-                    <h3>Oyun Ağaçları</h3>                    
-                    <img src="img/arbre-tic-tac-toe1.gif"/>
-                    <p>Ne kadar büyük olabilir: <a href="http://en.wikipedia.org/wiki/Game_complexity#Example:_tic-tac-toe">Tablo</a></p>
+				<section>
+					<h3>Relation of AI, ML, DL</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/ai_domains.jpg)"></div>
+					</div>
 				</section>
-                <section>
-                    <h3>Üstsel büyüme (Exponential Growth)</h3>                    
-                        <table style="font-size: 70%" cellspacing="0" cellpadding="5" border="1" rules="all">
-                        <thead>
-                        <tr><th>Complexity Class</th><th>N = 10</th><th>N = 100</th><th>N = 1,000</th>
-                        <th>...</th><th>N = 1,000,000</th>
-                        </thead>
-                        <tbody>
-                        <tr><td>O(1)</td>
-                            <td>1x10<sup>-7</sup><br>seconds</td>
-                            <td>1x10<sup>-7</sup><br>seconds</td>
-                            <td>1x10<sup>-7</sup><br>seconds</td>
-                            <td>...</td>
-                            <td>1x10<sup>-7</sup><br>seconds</td>
-
-                        <tr><td>O(log<sub>2</sub>N)</td>
-                            <td>3.3x10<sup>-7</sup><br>seconds</td>
-                            <td>6.6x10<sup>-7</sup><br>seconds</td>
-                            <td>10x10<sup>-7</sup><br>seconds</td>
-                            <td>...</td>
-                            <td>20x10<sup>-7</sup><br>seconds</td>
-
-                        <tr><td>O(N)</td>
-                            <td>1x10<sup>-7</sup><br>seconds</td>
-                            <td>1x10<sup>-6</sup><br>seconds</td>
-                            <td>1x10<sup>-5</sup><br>seconds</td>
-                            <td>...</td>
-                            <td>1x10<sup>-3</sup><br>seconds</td>
-
-                        <tr><td>O(N<sup>2</sup>)</td>
-                            <td>1x10<sup>-6</sup><br>seconds</td>
-                            <td>1x10<sup>-4</sup><br>seconds</td>
-                            <td>1x10<sup>-2</sup><br>seconds</td>
-                            <td>...</td>
-                            <td>2.7<br>hours</td>
-
-                        <tr><td>O(N<sup>3</sup>)</td>
-                            <td>1x10<sup>-5</sup><br>seconds</td>
-                            <td>1x10<sup>-2</sup><br>seconds</td>
-                            <td>10<br>seconds</td>
-                            <td>...</td>
-                            <td>3x10<sup>3</sup><br>years</td>
-
-                        <tr><td>O(2<sup>N</sup>)</td>
-                            <td>1x10<sup>-5</sup><br>seconds</td>
-                            <td>4x10<sup>21</sup><br>centuries</td>
-                            <td>forgetaboutit</td>
-                            <td>...</td>
-                            <td>forgetaboutit</td>
-                        </tbody>
-                        </table>
+				<section>
+					<h3>AI in Business</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/ai_startups2.jpg)"></div>
+					</div>
 				</section>
-                <section>
-                    <h3>Değer Fonksiyonu (Evaluation Function)</h3>                    
-                    <img src="img/eval_fn.gif" style="float:left; width:45%;" />
-<ul style="font-size: 80%; float:right; width:45%;"><li><code>f(P) = 200(K-K') + 9(Q-Q') + 5(R-R') + 3(B-B'+N-N') + (P-P') - 0.5(D-D'+S-S'+I-I') + 0.1(M-M') + ...</code></li>
-    <li>K, Q, R, B, N, P are the number of white kings, queens, rooks, bishops, knights and pawns on the board.</li>
-    <li>D, S, I are doubled, backward and isolated white pawns.</li>
-    <li>M represents white mobility (measured, say, as the number of legal moves available to White)</li>
-</ul>                    				
-                </section>
-                <section>
-                    <h3>Kısmi Arama (Minimax, Alfa-Beta budama)</h3>                    
-                    <img src="img/minimax_tree_chess.jpg"/>
-				</section>                
-                <section>
-                    <h3>Go ve Arama</h3>                    
-                    <img src="img/go_arama.jpg"/>
-				</section>   
-            </section>      
-		    <section>
-					<h3>Konuşma Planı</h3>
-                    <ul>
-                       <li>Neden buradayız?</li>
-                       <li>Nereden geldik? (Go, YZ Tarihçesi, Oyunlar ve YZ)</li>
-                       <li>Ne oldu şimdi? (<b>Deep Learning</b>, AlphaGo)</li>
-                       <li>Nereye gidiyoruz? (SKYNET!!!!)</li>                       
-                    </ul>
-			</section>              
-            <section>
-			  <h3>Deep Learning</h3>
-                <ul>
-                       <li>Multilayer Artificial Neural Networks (çok katmanlı)</li>
-                       <li>Matematiksel/algoritmik defolar giderildi</li>
-                       <li>Bilgisayarlar hızlandı. Paralelleştirme, GPUs.</li>
-                       <li>Convolutional Networks. Görme, Resmi Anlama.</li>
-                       <li>Uygulamalar:
-                         <a href="http://bryanrussell.org/projects/recognitionBySceneAlignment/index.html">Nesne</a> <a href="http://www.clarifai.com/#demo">tanıma</a>,
-                         <a href="http://cvlab.postech.ac.kr/research/dppnet/supplementary/index.html">Visual Question Answering</a>,
-                         <a href="http://erikbern.com/2016/01/21/analyzing-50k-fonts-using-deep-neural-networks/">Fonts</a>,
-                                                  
-                        <a href="http://rare-technologies.com/word2vec-tutorial/">Doğal Dil</a>, 
-                        <a href="http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors/">Word2Vec Uygulama</a>,
-                        <a href="https://www.jukedeck.com/">Müzik</a>, 
-                        <a href="https://deepart.io/latest/">DeepArt</a>                                                
-                       </li>
-                       <li><a href="http://neuralnetworksanddeeplearning.com/chap1.html">Detaylar</a>(ANN'e giriş ve Deep Learning)</li>
-                       <li><a href="http://www.kdnuggets.com/2016/01/seven-steps-deep-learning.html">Diğer kaynaklar</a> (dersler, kütüphaneler)</li>
-                </ul>       
-            </section>     
-		    <section>
-					<h3>Konuşma Planı</h3>
-                    <ul>
-                       <li>Neden buradayız?</li>
-                       <li>Nereden geldik? (Go, YZ Tarihçesi, Oyunlar ve YZ)</li>
-                       <li>Ne oldu şimdi? (Deep Learning, <b>AlphaGo</b>)</li>
-                       <li>Nereye gidiyoruz? (SKYNET!!!!)</li>                       
-                    </ul>
-			</section>             
-            <section>            
-                <section> 
-                 <h3>AlphaGo Mimarisi (Deep Learning, Reinforcement Learning)</h3>
-                 <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/alphago_mimari.jpg)"></div>                     
-                </div></section>
-                <section> 
-                 <h3>AlphaGo Mimarisi (Monte Carlo Search Tree)</h3>
-                 <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/MCTS.svg.png)"></div>                     
-                </div></section>
-                <section> 
-                 <h3>AlphaGo Mimarisi (Monte Carlo Search Tree)</h3>
-                 <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/alphago_mcst.jpg)"></div>                     
-                </div></section>                
-            </section>     
-		    <section>
-		      <section>
-					<h3>Konuşma Planı</h3>
-                    <ul>
-                       <li>Neden buradayız?</li>
-                       <li>Nereden geldik? (Go, YZ Tarihçesi, Oyunlar ve YZ)</li>
-                       <li>Ne oldu şimdi? (Deep Learning, AlphaGo)</li>
-                       <li><b>Nereye gidiyoruz? (SKYNET!!!!)</b></li>                       
-                    </ul>
-			  </section>   
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/go_poster.png)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural1.jpg)"></div>                     
-                </div></section>      
-              <section  data-background="#333">                
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural1a.jpg)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural2.jpg)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural3.jpg)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural4.jpg)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural5.jpg)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural6.jpg)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural7.jpg)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural8.jpg)"></div>                     
-                </div></section>              
-              <section  data-background="#333">
-              <div class="stretch">                     
-                         <div class="horitem" style="height:100%; width:100%; 
-                                                     background-image: url(img/cultural9.jpg)"></div>                     
-                </div></section>              
+				<section>
+					<h3>AI in Business. Transportation</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/ai_trasportation.jpg)"></div>
+					</div>
+				</section>
+				<section>
+					<h3>AI in Business. Health Care.</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/ai-healthcare.jpg)"></div>
+					</div>
+				</section>
+				<section>
+					<h3>AI in Business. Across sectors & Global.</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/ai_companies_map.jpg)"></div>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>What About Data Science? DIKW Pyramid.</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/dikw1.png)"></div>
+					</div>
+				</section>
+				<section>
+					<div class="stretch">
+						<div class="horitem" style="width:100%; height:35%; background-image: url(img/dikw4.png)"></div>
+	          <div class="horitem" style="width:55%; height:65%; background-image: url(img/dikw2.png)"></div>
+						<div class="horitem" style="width:40%; height:65%; background-image: url(img/dikw3.jpg)"></div>
+					</div>
+				</section>
+				<section>
+					<h3>What About Data Science? Interdisciplinary.</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/data_sci_venn2.jpg)"></div>
+					</div>
+			  </section>
+				<section>
+					<h3>Data Science is actually about Data Scientist.</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/data-scientist-define.jpg)"></div>
+					</div>
+			  </section>
+				<section>
+					<h3>Data Science is actually about Data Scientist.</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%; background-image: url(img/data-scientist-venn1.jpg)"></div>
+					</div>
+			  </section>
 
-            </section>
-            <section>
-              <h3>Nereye Gidiyoruz?</h3>
-              <ul style="font-style: 100%">
-                  <li class="fragment">AlphaGo: Hybrid, Görme ve Dil Uygulamaları, Bol ilgi.</li>
-                  <li class="fragment">Genel YZ: Problem hala belli değil. Logo'larla uğraşıyoruz.</li>
-                  <li class="fragment">Bilim insansal bir faaliyet. Önce kolay şeyler.</li>
-                  <li class="fragment">Teknoloji sadece bir araç (iyi/kötü değil)???</li>
-                  <li class="fragment">İşleri AI kapacak. Evrensel Taban Gelir (Universal Base Income)</li>
-              </ul>                       
-			</section>        
-            <section>
-              <h3>Nereye Gidiyoruz? YZ Harici.</h3>
-              <ul style="font-style: 100%">
-                  <li class="fragment">Facebook sizi daha iyi tanıyor.</li>
-                  <li class="fragment">Internet of Things. Güvenlik. Big Brother.</li>
-                  <li class="fragment"><span class="fragment">Crispr</span><span class="fragment"> gene editing. BioEthics.</span></li>
-              </ul>                       
-			</section>        
-            
-			</div>
+				<section>
+					<h3>How can I become a data scientist?</h3>
+					<div class="stretch" style="margin-bottom: 3%;">
+						<div class="horitem" style="height:100%; width:35%; background-image: url(img/data_scientist_def.png)"></div>
+						<div class="horitem" style="height:100%; width:62%; background-image: url(img/ai_is_stats.jpeg)"></div>
+					</div>
+					<ul>
+						<li>Learn statistics well</li>
+						<li>Learn Python and/or R</li>
+						<li>Learn Machine Learning Algorithms</li>
+						<li>MOOCs, <a href="https://www.datacamp.com">Datacamp</a></li>
+						<li>Hone your skills. Kaggle etc., Senior Design Project? Graduate Programs (MS, Phd)</li>
+						<li>Google it. A good <a href="https://www.quora.com/How-can-I-become-a-data-scientist-1 ">page</a>.</li>
+					</ul>
+				</section>
+			</section>
+			</section>
+
+      <section>
+				<section>
+					<h3>Talk Plan</h3>
+					<ul>
+						<li>AI, Machine Learning, Data Science<</li>
+						<li><b>Why AlphaGo?</b></li>
+						<li>Game of Go, How Computers Play Games</li>
+						<li>AlphaGo
+							<ul>
+								<li>Monte Carlo Tree Search</li>
+								<li>Reinforcement Learning</li>
+								<li>Deep Learning</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+					<section>
+						<h3>Why AlphaGo?</h3>
+						<div class="stretch">
+							<div class="horitem" style="width:45%">
+								<a href="http://bilmuh.mu.edu.tr/tr/etkinlik/bilgisayarlar-neden-go-oynayamayi-beceremezler-21-mart-cuma-3616">
+									<div class="fragment" style="height:55%; background-image: url(img/seminer1.png);"></div>
+								</a>
+								<div class="fragment" style="height: 45%; background-image: url(img/Fan-Hui-vs-AlphaGo.jpg);">
+								</div>
+							</div>
+							<div class="horitem" style="width:45%">
+								<div class="fragment" style="height: 55%; background-image: url(img/nature-cover.jpg);">
+								</div>
+								<div class="fragment" style="height: 45%; background-image: url(img/sedol_match.jpg);">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="stretch">
+							<div class="horitem" style="height: 100%; width:100%; background-image: url(img/betting.jpg);"></div>
+						</div>
+					</section>
+
+					<section data-background="img/korea1.jpg"></section>
+					<section data-background="img/korea2.jpg"></section>
+					<section data-background="img/watching6.jpg"></section>
+					<section data-background="img/watching1.jpg"></section>
+					<section data-background="img/watching5.jpg"></section>
+					<section data-background="img/watching2.jpg"></section>
+					<section data-background="img/watching3.jpg"></section>
+
+					<section data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
+						<div class="stretch">
+							<div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline1.jpg);"></div>
+						</div>
+					</section>
+					<section data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
+						<div class="stretch">
+							<div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline2.jpg);"></div>
+						</div>
+					</section>
+					<section data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
+						<div class="stretch">
+							<div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline3.jpg);"></div>
+						</div>
+					</section>
+					<section data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
+						<div class="stretch">
+							<div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline4.jpg);"></div>
+						</div>
+					</section>
+					<section data-background="#666" style="background-image:url(img/alphago_logo_small.png);">
+						<div class="stretch">
+							<div class="horitem" style="height: 100%; width:100%; background-image: url(img/headline5.jpg);"></div>
+						</div>
+					</section>
+			</section>
+
+			<section>
+					<section>
+						<h3>Talk Plan</h3>
+						<ul>
+							<li>AI, Machine Learning, Data Science<</li>
+							<li>Why AlphaGo?</li>
+							<li><b>Game of Go, How Computers Play Games?</b></li>
+							<li>AlphaGo
+								<ul>
+									<li>Monte Carlo Tree Search</li>
+									<li>Reinforcement Learning</li>
+									<li>Deep Learning</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				<section>
+					<h3><img src="img/playing1.png" height=180 /><span style="padding: 0px 16px">Go</span>
+						<img height=180 src="img/playing2.png" /></h3>
+					<!-- <img style="position:absolute; top:-100px; left:-230px;" src="img/playing1.png" />
+	                    <img style="position:absolute; top:-100px; right:-230px;" src="img/playing2.png" /> -->
+					<ul>
+						<li class="fragment">China (4th century BC, war, art), Korea (5th-7th cent.), Japan (7th cent., <a href="http://en.wikipedia.org/wiki/Four_go_houses">Go Houses</a>), West (1900's)</li>
+						<li class="fragment">Turkey (90's, <a href="http://www.go.metu.edu.tr/alparkilinc.html">Alpar Kılınç</a>, <a href="https://eksisozluk.com/sibumi--153274">Şibumi</a>/<a href="https://eksisozluk.com/trevanian--33822">Trevanian</a>, <a href="http://www.tgod.org.tr/gohane">Türkiye
+								Go Oyuncuları Derneği</a>)</li>
+						<li class="fragment">Strong Philosophy, Insights, Simple Rules, Visual Intuition</li>
+						<li class="fragment">Player rankings (30k &rarr; 1k &rarr; 1d &rarr; 9d &rarr; 1p &rarr; 9p)</li>
+						<li class="fragment">How can I learn?: <a href="http://senseis.xmp.net/">Web</a>, <a href="http://www.goproblems.com/">Problems</a>, Books, <a href="http://en.wikipedia.org/wiki/Internet_Go_server">Go Servers</a> (IGS, KGS, <a href="http://en.wikipedia.org/wiki/Go_software#User_Interfaces">Clients</a>)</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Go Basic Rules</h3>
+					<div style="float: left; width:45%;"><img src="img/Go-board-animated.gif" /></div>
+					<ul style="width:45%; font-size:80%;">
+						<li>Chess like mechanics: 2-person, black&white <em>equal</em> pieces, played into <em>grid intersections</em></li>
+						<li>Rule 1 (liberty): Each stone (stone group) needs empty neighbors to breathe, otherwise they die (captured).</li>
+						<li>Rule 2 (ko): Board state can't repeat.</li>
+						<li>All other concepts derive from these.</li>
+						<li>Scoring: Area surrounded + captured stones + handicap</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Go Wisdom</h3>
+					<ul style="font-size:90%;">
+						<li class="fragment">Give your opponent what he wants.</li>
+						<li class="fragment">He who rides on a tiger can never get off.</li>
+						<li class="fragment">A rich man should not pick quarrels.</li>
+						<li class="fragment">Greed for the win takes the win away.</li>
+						<li class="fragment">Don't try to win. Try not to lose.</li>
+						<li class="fragment">You can play Go but don't let Go play you.</li>
+						<li class="fragment">Never wrestle with a pig.</li>
+						<li class="fragment">Make a fist before striking.</li>
+						<li class="fragment">Play urgent moves before big moves.</li>
+						<li class="fragment">Make a feint to the East while attacking in the West.</li>
+						<li class="fragment">Play fast, die fast. Play slow, die slow.</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>AI Early History</h3>
+					<ul style="font-size:90%;">
+						<li class="fragment">1950 - Turing Test</li>
+						<li class="fragment">1950 - Claude Shannon: Analysis of Chess as a Search Problem</li>
+						<li class="fragment">1951 - Checker and Chess Programs</li>
+						<li class="fragment">1956 - Dartmouth College summer <b>AI</b> conference</li>
+						<li class="fragment">1959 - MIT AI Lab</li>
+						<li class="fragment">1961 - Symbolic Computing, Calculus Problems</li>
+						<li class="fragment">1965 - ELIZA, First chat bot</li>
+						<li class="fragment">1966 - Machine Translation mission impossible.<br/>Natural Language Processing to sleep.</li>
+						<li class="fragment">1969 - Minsky & Pappert, Perceptrons,<br/>but soon after Neural Networks to sleep</li>
+						<li class="fragment">First Winter of AI</li>
+					</ul>
+				</section>
+				<section>
+					<h3>AI Recent History</h3>
+					<ul style="font-size:85%;">
+						<li class="fragment">1980s - Expert Systems, Commercialization</li>
+						<li class="fragment">1986 - Neural Networks awakens. Backpropogation (1974)</li>
+						<li class="fragment">1991 - Dart, 1991 First Gulf War</li>
+						<li class="fragment">1994 - Chinook, English Checker Champion</li>
+						<li class="fragment">1995 - No Hands Across America, 4500km, no gas/accelaration</li>
+						<li class="fragment">1997 - Deep Blue beats Kasparov.</li>
+						<li class="fragment">1997 - Othello (Reversi) World Champion</li>
+						<li class="fragment">1998 - Furby, robotlar at home</li>
+						<li class="fragment">1998 - TD-Gammon, Bakcgammon WC, Reinforcement Learning</li>
+						<li class="fragment">2009 - Self Driving Car, Google</li>
+						<li class="fragment">2011 - IBM Watson, Jeopardy World Champion</li>
+						<li class="fragment">2013 - HRP2 (Japana/Google), drive a vehicle, walk over debris, climb a ladder, remove debris, walk through doors, cut through a wall, close valves and connect a hose</li>
+						<li class="fragment">2016 - AlphaGo</li>
+				</section>
+				<section>
+					<h3>Game Playing AI</h3>
+					<ul>
+						<li class="fragment">Test ground for AI methods, Challenging, Fun</li>
+						<li class="fragment">Formally defined rules, Many possibilities (search space)</li>
+						<li class="fragment">Uncertainties (opponent, luck), time constraints, partial information</li>
+						<li class="fragment">Solved: Chinook (1994), Chess (Deep Blue-Kasparov 1997, Deep Fritz-Kramnik 2006), Othello (1997), Scrabble (Maven, 1998), Backgammon (TD-Gammon, 1998)</li>
+						<li class="fragment">New Goals: <strike>Poker</strike>, <strike>Go</strike>, Boards Games (Settlers of Catan), MMORPG, General Game Playing</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Game Trees</h3>
+					<img src="img/arbre-tic-tac-toe1.gif" />
+					<p>How Big: <a href="img/game_trees.png">Table</a></p>
+				</section>
+				<section>
+					<h3>Exponential Growth</h3>
+					<table style="font-size: 70%" cellspacing="0" cellpadding="5" border="1" rules="all">
+						<thead>
+							<tr>
+								<th>Complexity Class</th>
+								<th>N = 10</th>
+								<th>N = 100</th>
+								<th>N = 1,000</th>
+								<th>...</th>
+								<th>N = 1,000,000</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>O(1)</td>
+								<td>1x10<sup>-7</sup><br>seconds</td>
+								<td>1x10<sup>-7</sup><br>seconds</td>
+								<td>1x10<sup>-7</sup><br>seconds</td>
+								<td>...</td>
+								<td>1x10<sup>-7</sup><br>seconds</td>
+
+							<tr>
+								<td>O(log<sub>2</sub>N)</td>
+								<td>3.3x10<sup>-7</sup><br>seconds</td>
+								<td>6.6x10<sup>-7</sup><br>seconds</td>
+								<td>10x10<sup>-7</sup><br>seconds</td>
+								<td>...</td>
+								<td>20x10<sup>-7</sup><br>seconds</td>
+
+							<tr>
+								<td>O(N)</td>
+								<td>1x10<sup>-7</sup><br>seconds</td>
+								<td>1x10<sup>-6</sup><br>seconds</td>
+								<td>1x10<sup>-5</sup><br>seconds</td>
+								<td>...</td>
+								<td>1x10<sup>-3</sup><br>seconds</td>
+
+							<tr>
+								<td>O(N<sup>2</sup>)</td>
+								<td>1x10<sup>-6</sup><br>seconds</td>
+								<td>1x10<sup>-4</sup><br>seconds</td>
+								<td>1x10<sup>-2</sup><br>seconds</td>
+								<td>...</td>
+								<td>2.7<br>hours</td>
+
+							<tr>
+								<td>O(N<sup>3</sup>)</td>
+								<td>1x10<sup>-5</sup><br>seconds</td>
+								<td>1x10<sup>-2</sup><br>seconds</td>
+								<td>10<br>seconds</td>
+								<td>...</td>
+								<td>3x10<sup>3</sup><br>years</td>
+
+							<tr>
+								<td>O(2<sup>N</sup>)</td>
+								<td>1x10<sup>-5</sup><br>seconds</td>
+								<td>4x10<sup>21</sup><br>centuries</td>
+								<td>forgetaboutit</td>
+								<td>...</td>
+								<td>forgetaboutit</td>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Evaluation Function</h3>
+					<img src="img/eval_fn.gif" style="float:left; width:45%;" />
+					<ul style="font-size: 80%; float:right; width:45%;">
+						<li><code>f(P) = 200(K-K') + 9(Q-Q') + 5(R-R') + 3(B-B'+N-N') + (P-P') - 0.5(D-D'+S-S'+I-I') + 0.1(M-M') + ...</code></li>
+						<li>K, Q, R, B, N, P are the number of white kings, queens, rooks, bishops, knights and pawns on the board.</li>
+						<li>D, S, I are doubled, backward and isolated white pawns.</li>
+						<li>M represents white mobility (measured, say, as the number of legal moves available to White)</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Partial Search (Minimax, Alfa-Beta pruning)</h3>
+					<img src="img/minimax_tree_chess.jpg" />
+				</section>
+				<section>
+					<h3>Go and Search</h3>
+					<img src="img/go_arama.jpg" />
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h3>Talk Plan</h3>
+					<ul>
+						<li>AI, Machine Learning, Data Science<</li>
+						<li>Why AlphaGo?</li>
+						<li>Game of Go, How Computers Play Games</li>
+						<li><b>AlphaGo</b>
+							<ul>
+								<li>Monte Carlo Tree Search</li>
+								<li>Reinforcement Learning</li>
+								<li>Deep Learning</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Monte Carlo Search Tree</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%;
+                                                     background-image: url(img/MCTS.svg.png)"></div>
+					</div>
+				</section>
+				<section>
+					<h3>Monte Carlo Search Tree</h3>
+					<div class="stretch">
+						<div class="horitem" style="height:100%; width:100%;
+                                                     background-image: url(img/alphago_mcst.jpg)"></div>
+					</div>
+				</section>
+				<section>
+					<h3>Reinforcement Learning</h3>
+					<a href="https://slideplayer.com/slide/5336086/">LINK TO SLIDES :)</a>
+				</section>
+			</section>
+
+
+
+
+
+
+
+
+			<section>
+				<section>
+					<h3>Deep Learning</h3>
+					<ul>
+						<li>Multilayer (deep) Artificial Neural Networks (<a href="https://lecture-demo.ira.uka.de/neural-network-demo/">simple NN demo</a> )</li>
+						<li><a href="http://neuralnetworksanddeeplearning.com/chap1.html">Tutorial for ANN and Deep Learning</a></li>
+						<li>Some mathematical/algorithmic improvements to NN</li>
+						<li>Faster Computers. Parallel Computing, GPUs.</li>
+						<li>Convolutional Networks (<a href="https://medium.freecodecamp.org/an-intuitive-guide-to-convolutional-neural-networks-260c2de0a050">good intro</a>), (<a href="https://distill.pub/2018/building-blocks/">interpretation</a>)</li>
+						<li>Some Applications:
+							<a href="http://bryanrussell.org/projects/recognitionBySceneAlignment/index.html">Object</a> <a href="http://www.clarifai.com/#demo">recognition</a>,
+							<a href="http://cvlab.postech.ac.kr/research/dppnet/supplementary/index.html">Visual Question Answering</a>,
+							<a href="http://erikbern.com/2016/01/21/analyzing-50k-fonts-using-deep-neural-networks/">Fonts</a>,
+
+							<a href="http://rare-technologies.com/word2vec-tutorial/">Word Vectors</a> (
+							<a href="http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors/">an application</a>),
+							<a href="https://www.jukedeck.com/">Generate Music</a>,
+							<a href="https://deepart.io/latest/">DeepArt</a>
+						</li>
+						<li><a href="http://www.kdnuggets.com/2016/01/seven-steps-deep-learning.html">Other resources</a></li>
+					</ul>
+			</section>
+			<section>
+				<h3>AlphaGo Architecture (DL and RL)</h3>
+				<div class="stretch">
+					<div class="horitem" style="height:100%; width:100%;
+																									 background-image: url(img/alphago_mimari.jpg)"></div>
+				</div>
+         <p align=center><a href="https://www.slideshare.net/DaveSelinger/chakrabarti-alpha-go-analysis">slides</a></p>
+				</section>
+				<section>QUESTIONS?</section>
+			</section>
+
 
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	</div>
 
-		<script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-                slideNumber: 'c/t',
-                viewDistance: 3,
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			slideNumber: 'c/t',
+			viewDistance: 3,
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+			transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+			// Optional reveal.js plugins
+			dependencies: [{
+					src: 'lib/js/classList.js',
+					condition: function() {
+						return !document.body.classList;
+					}
+				},
+				{
+					src: 'plugin/markdown/marked.js',
+					condition: function() {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: 'plugin/markdown/markdown.js',
+					condition: function() {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function() {
+						hljs.initHighlightingOnLoad();
+					}
+				},
+				{
+					src: 'plugin/zoom-js/zoom.js',
+					async: true
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				}
+			]
+		});
+	</script>
 
-		</script>
+</body>
 
-	</body>
 </html>
